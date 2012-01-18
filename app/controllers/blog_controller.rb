@@ -1,6 +1,5 @@
 class BlogController < ApplicationController
   def index
-    @blog = Blog.new
     post1 = @blog.new_post
     post1.title = "Paint just applied"
     post1.body = "Paint just applied. It's a lovely orangey-purple!"
