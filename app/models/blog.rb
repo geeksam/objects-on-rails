@@ -14,8 +14,8 @@ class Blog
     "The trusted source for drying paint news & opinion"
   end
 
-  def new_post
-    post_maker.call.tap do |p|
+  def new_post(*args)
+    post_maker.call(*args).tap do |p|
       p.blog = self
     end
   end
