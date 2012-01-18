@@ -24,5 +24,14 @@ describe Blog do
     it "should set the post's blog reference to itself" do
       @it.new_post.blog.must_equal(@it)
     end
+
+  end
+
+  describe "#add_entry" do
+    it "should add the entry to the blog" do
+      entry = Object.new
+      @it.add_entry(entry)
+      @it.entries.must_include(entry)
+    end
   end
 end
