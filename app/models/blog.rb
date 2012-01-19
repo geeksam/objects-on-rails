@@ -14,6 +14,10 @@ class Blog
     "The trusted source for drying paint news & opinion"
   end
 
+  def entries
+    @entries.sort_by{|e| e.pubdate}.reverse.take(10)
+  end
+
   def new_post(*args)
     post_maker.call(*args).tap do |p|
       p.blog = self
@@ -21,7 +25,7 @@ class Blog
   end
 
   def add_entry(entry)
-    entries << entry
+    @entries << entry
   end
 
 private
