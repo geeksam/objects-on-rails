@@ -36,7 +36,7 @@ describe Blog do
 
   describe "#add_entry" do
     it "should add the entry to the blog" do
-      entry = Object.new
+      entry = stub_entry_with_date('2012-01-18')
       @it.add_entry(entry)
       @it.entries.must_include(entry)
     end
